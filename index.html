@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curved Gallery Slider</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Critical: prevent flash of unstyled content while the module loads */
+      html {
+        background-color: #1f1c1f;
+      }
+      body {
+        visibility: hidden;
+      }
+      body.is-ready {
+        visibility: visible;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="stage">
+      <section class="gallery" aria-label="Product gallery slider">
+        <div class="gallery__clip">
+          <div class="gallery__track"><!-- slides injected by JS --></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
