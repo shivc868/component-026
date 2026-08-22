@@ -1,0 +1,85 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #1f1c1f;
+  --ink: #3a352f;
+  --ink-soft: #9a9187;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ---------------- gallery ---------------- */
+
+.gallery {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.gallery.is-dragging {
+  cursor: grabbing;
+}
+
+/* Full-viewport layer that receives the dynamic clip-path: path("...") */
+.gallery__clip {
+  position: absolute;
+  inset: 0;
+  will-change: clip-path;
+}
+
+.gallery__track {
+  position: absolute;
+  inset: 0;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.slide__img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130%;
+  height: 76%;
+  /* centering transform is owned by GSAP (xPercent/yPercent) in main.js */
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  will-change: transform;
+}
